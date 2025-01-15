@@ -68,9 +68,7 @@ def selenium_section (url):
     print (len (els))
     els = els[1].find_elements (By.TAG_NAME, 'button')
     els.pop (0) # Remove spurious value from list of metals
-    #els.pop (0) # Remove Platinum as it is scrapged
-    #els.pop (0) # Remove 18K Yellow Gold as it is scrapped already.
-    #els.pop (0) # Remove 18K Rose Gold as it is scrapped already.
+    
     for item in els:
         first_time_entry = True
         metal = item.find_element (By.TAG_NAME, 'p').text
@@ -85,16 +83,7 @@ def selenium_section (url):
         els_scroll = driver.find_element (By.CLASS_NAME, 'scroll-content.svelte-rexg8n')
         els = els_scroll.find_elements (By.TAG_NAME, 'button')
         print (len (els))
-        # els.pop (0)
-        # els.pop (0)
-        # els.pop (0)
-        # els.pop (0)
-        # els.pop (0)
-        # els.pop (0)
-        # els.pop (0)
-        # els.pop (0)
-        # els.pop (0)
-        i = 0
+               i = 0
         for item in els:
             # Following code section written because when new metal is clicked first time shapes section scroll will be at the end.
             # This code brings Shapes Section Scroll to the right.
