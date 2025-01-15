@@ -63,9 +63,9 @@ def selenium_section (url):
     print (len (els))
     els = els[1].find_elements (By.TAG_NAME, 'button')
     els.pop (0) # Remove spurious value from list of metals
-    els.pop (0) # Remove Platinum as it is scrapged
-    els.pop (0) # Remove 18K Yellow Gold as it is scrapped already.
-    els.pop (0) # Remove 18K Rose Gold as it is scrapped already.
+    #els.pop (0) # Remove Platinum as it is scrapged
+    #els.pop (0) # Remove 18K Yellow Gold as it is scrapped already.
+    #els.pop (0) # Remove 18K Rose Gold as it is scrapped already.
     for item in els:
         first_time_entry = True
         metal = item.find_element (By.TAG_NAME, 'p').text
@@ -106,8 +106,6 @@ def selenium_section (url):
 
             shape_dir = dir # engagement-rings/platinum (18K Yellow Gold, 18K Rose Gold, 18K White Gold)
             i += 1
-            #driver.execute_script("arguments[0].scrollIntoView();", item)
-            sleep (5)
             try:
                 item.click ()
                 sleep (15)
@@ -132,8 +130,6 @@ def selenium_section (url):
             sleep (3)
             try:
                 els = driver.find_element (By.CLASS_NAME, 'shine-button.load-more.svelte-128ewnv')
-                #driver.execute_script("arguments[0].scrollIntoView();", els)
-                #sleep (2)
                 els.click ()
                 sleep (15)
             except Exception as e:
@@ -182,10 +178,7 @@ def requests_section (url, dir):
 def beautiful_soup_section (page_source, dir):
     global Ring_
     global datalist_rings
-    global Sr_
-    #dir = 'engagement-rings/18K-Yellow-Gold'
-    #shape_dir = os.path.join (dir, shape)
-    
+    global Sr_    
     doc = BeautifulSoup (page_source, 'html.parser')
     name = doc.find ('h1', class_='svelte-gwj5u7').get_text ()
     print (name)
