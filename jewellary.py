@@ -1,3 +1,8 @@
+# This project picked from upwork.
+# Rings data scraped from "https://www.cullenjewellery.com/engagement-rings".
+# This project implemented in two steps: In first step (in this file) Rings data scraped and saved in folders (parent folder ==>> engagement-rings).
+# engagement-rings folder copied in engagement-rings-png.
+# In second step (workingpy.py), all images in engagement-rings-png converted into png and reduced for excel display. Excel also created and images displayed in excel.
 from selenium import webdriver
 #from selenium_authenticated_proxy import SeleniumAuthenticatedProxy
 from selenium.webdriver.common.by import By

@@ -1,3 +1,6 @@
+# This is second step implementation of this project.
+# In first step images data was scraped.
+# In this step images resized for excel and excel created.
 import os
 import pandas as pd
 from PIL import Image, ImageChops
